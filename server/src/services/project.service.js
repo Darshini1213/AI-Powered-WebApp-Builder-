@@ -1,4 +1,4 @@
-import Project from '../models/Project.model.js';
+import Project from '../models/project.model.js';
 
 export const getUserProjects = async (userId) => {
   const projects = await Project.find({ userId }).sort({ updatedAt: -1 });
