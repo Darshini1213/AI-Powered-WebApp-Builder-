@@ -12,7 +12,7 @@ export const generateCode = async (req, res, next) => {
       });
     }
 
-    const result = await generationService.generateCode(projectId, req.user._id, prompt.trim());
+    const result = await generationService.generateCode(projectId, req.user.id, prompt.trim());
     return res.json({ success: true, data: result });
   } catch (error) {
     if (error.statusCode) return res.status(error.statusCode).json({ success: false, message: error.message });

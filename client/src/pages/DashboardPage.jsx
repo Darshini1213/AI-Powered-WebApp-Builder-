@@ -29,7 +29,7 @@ function DashboardPage() {
   const handleNewProject = async () => {
     try {
       const project = await createProject();
-      navigate(`/builder/${project._id}`);
+      navigate(`/builder/${project.id}`);
     } catch (err) {
       showToast('Failed to create project.', 'error');
     }
@@ -42,7 +42,7 @@ function DashboardPage() {
   const handleDelete = async (id) => {
     try {
       await deleteProject(id);
-      setProjects(projects.filter((p) => p._id !== id));
+      setProjects(projects.filter((p) => p.id !== id));
       showToast('Project deleted.', 'success');
     } catch (err) {
       showToast('Failed to delete project.', 'error');
@@ -85,7 +85,7 @@ function DashboardPage() {
         <div className="dashboard-grid">
           {projects.map((project) => (
             <ProjectCard
-              key={project._id}
+              key={project.id}
               project={project}
               onOpen={handleOpen}
               onDelete={handleDelete}

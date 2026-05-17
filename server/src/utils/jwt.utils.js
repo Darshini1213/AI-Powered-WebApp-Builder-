@@ -10,7 +10,7 @@ const getSecret = () => {
 export const generateToken = (user) => {
     try {
         const payload = {
-            id: user._id,
+            id:user.id,
             email: user.email,
         };
 

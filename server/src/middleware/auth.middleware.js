@@ -1,8 +1,9 @@
 import { verifyToken } from '../utils/jwt.utils.js';
-import User from '../models/User.model.js';
+import db from '../config/firebase.config.js';
 
 const authenticate = async (req, res, next) => {
   try {
+
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -16,22 +17,33 @@ const authenticate = async (req, res, next) => {
 
     const decoded = verifyToken(token);
 
-    const user = await User.findById(decoded.id);
+    // Get user from Firestore
+    const userDoc = await db
+      .collection('users')
+      .doc(decoded.id)
+      .get();
 
-    if (!user) {
+    if (!userDoc.exists) {
       return res.status(401).json({
         success: false,
         message: 'User not found. Please log in again.',
       });
     }
 
-    req.user = user;
+    req.user = {
+      id: userDoc.id,
+      ...userDoc.data(),
+    };
+
     next();
+
   } catch (error) {
+
     return res.status(401).json({
       success: false,
       message: 'Invalid or expired token. Please log in again.',
     });
+
   }
 };
 

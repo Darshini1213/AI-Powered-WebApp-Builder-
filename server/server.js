@@ -1,23 +1,25 @@
 import "dotenv/config";
 import app from "./src/app.js";
-import connectDB from "./src/config/db.config.js";
-console.log("JWT_SECRET:", process.env.JWT_SECRET); 
-const PORT = process.env.PORT || 5000;
 
-console.log("DB URI:", process.env.MONGODB_URI);
-console.log("JWT_SECRET:", process.env.JWT_SECRET);
+const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
-    await connectDB();
+
+    console.log("Firebase connected successfully");
+
     app.listen(PORT, () => {
-      console.log(`\n Server is running on port ${PORT}`);
-      console.log(` Environment: ${process.env.NODE_ENV || "development"}`);
-      console.log(` URL: http://localhost:${PORT}\n`);
+      console.log(`\nServer is running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+      console.log(`URL: http://localhost:${PORT}\n`);
     });
+
   } catch (error) {
-    console.error("Failed to start server:", error.message);
+
+    console.error("Server startup error:", error);
+
     process.exit(1);
+
   }
 };
 

@@ -37,7 +37,7 @@ export const loginUser = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
   try {
-    const user = await authService.getUserProfile(req.user._id);
+const user = await authService.getUserProfile(req.user.id);
     return res.json({ success: true, data: user });
   } catch (error) {
     next(error);

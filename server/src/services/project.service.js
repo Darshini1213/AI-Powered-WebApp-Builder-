@@ -1,53 +1,126 @@
-import Project from '../models/project.model.js';
+import db from '../config/firebase.config.js';
 
 export const getUserProjects = async (userId) => {
-  const projects = await Project.find({ userId }).sort({ updatedAt: -1 });
+
+  const snapshot = await db
+    .collection('projects')
+    .where('userId', '==', userId)
+    .get();
+
+  const projects = snapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  // Sort latest first
+  projects.sort((a, b) =>
+    new Date(b.updatedAt) - new Date(a.updatedAt)
+  );
+
   return projects;
 };
 
 export const getProjectById = async (projectId, userId) => {
-  const project = await Project.findOne({ _id: projectId, userId });
-  if (!project) {
+
+  const doc = await db.collection('projects').doc(projectId).get();
+
+  if (!doc.exists) {
     const error = new Error('Project not found.');
     error.statusCode = 404;
     throw error;
   }
+
+  const project = {
+    id: doc.id,
+    ...doc.data(),
+  };
+
+  if (project.userId !== userId) {
+    const error = new Error('Unauthorized access.');
+    error.statusCode = 403;
+    throw error;
+  }
+
   return project;
 };
 
 export const createProject = async (userId, title) => {
-  const project = await Project.create({
+
+  const projectData = {
     userId,
     title: title || 'Untitled Project',
     messages: [],
     generatedCode: '',
     versions: [],
-  });
-  return project;
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+
+  const docRef = await db.collection('projects').add(projectData);
+
+  return {
+    id: docRef.id,
+    ...projectData,
+  };
 };
 
 export const updateProject = async (projectId, userId, updates) => {
-  const project = await Project.findOne({ _id: projectId, userId });
-  if (!project) {
+
+  const docRef = db.collection('projects').doc(projectId);
+
+  const doc = await docRef.get();
+
+  if (!doc.exists) {
     const error = new Error('Project not found.');
     error.statusCode = 404;
     throw error;
   }
 
-  if (updates.title !== undefined) project.title = updates.title;
-  if (updates.description !== undefined) project.description = updates.description;
+  const project = doc.data();
 
-  project.updatedAt = new Date();
-  await project.save();
-  return project;
+  if (project.userId !== userId) {
+    const error = new Error('Unauthorized access.');
+    error.statusCode = 403;
+    throw error;
+  }
+
+  const updatedData = {
+    ...updates,
+    updatedAt: new Date(),
+  };
+
+  await docRef.update(updatedData);
+
+  return {
+    id: projectId,
+    ...project,
+    ...updatedData,
+  };
 };
 
 export const deleteProject = async (projectId, userId) => {
-  const project = await Project.findOneAndDelete({ _id: projectId, userId });
-  if (!project) {
+
+  const docRef = db.collection('projects').doc(projectId);
+
+  const doc = await docRef.get();
+
+  if (!doc.exists) {
     const error = new Error('Project not found.');
     error.statusCode = 404;
     throw error;
   }
-  return { message: 'Project deleted successfully.' };
+
+  const project = doc.data();
+
+  if (project.userId !== userId) {
+    const error = new Error('Unauthorized access.');
+    error.statusCode = 403;
+    throw error;
+  }
+
+  await docRef.delete();
+
+  return {
+    message: 'Project deleted successfully.',
+  };
 };

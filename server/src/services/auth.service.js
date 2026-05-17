@@ -1,67 +1,111 @@
 import bcrypt from 'bcryptjs';
-import User from '../models/User.model.js';
+import db from '../config/firebase.config.js';
 import { generateToken } from '../utils/jwt.utils.js';
 
 export const register = async (name, email, password) => {
-  const existing = await User.findOne({ email });
-  if (existing) {
+
+  // Check existing user
+  const existingSnapshot = await db
+    .collection('users')
+    .where('email', '==', email)
+    .get();
+
+  if (!existingSnapshot.empty) {
     const error = new Error('Email already registered.');
     error.statusCode = 409;
     throw error;
   }
 
+  // Hash password
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const user = await User.create({ name, email, password: hashedPassword });
+  // Create user
+  const userRef = await db.collection('users').add({
+    name,
+    email,
+    password: hashedPassword,
+    createdAt: new Date(),
+    lastLogin: new Date(),
+  });
 
+  const user = {
+    id: userRef.id,
+    name,
+    email,
+  };
+
+  // Generate JWT
   const token = generateToken(user);
 
   return {
     token,
-    user: { id: user._id, email: user.email, name: user.name },
+    user,
   };
 };
 
 export const emailLogin = async (email, password) => {
-  const user = await User.findOne({ email });
-  if (!user) {
+
+  // Find user
+  const snapshot = await db
+    .collection('users')
+    .where('email', '==', email)
+    .get();
+
+  if (snapshot.empty) {
     const error = new Error('Invalid email or password.');
     error.statusCode = 401;
     throw error;
   }
 
-  const isMatch = await bcrypt.compare(password, user.password);
+  const doc = snapshot.docs[0];
+
+  const userData = doc.data();
+
+  // Compare password
+  const isMatch = await bcrypt.compare(password, userData.password);
+
   if (!isMatch) {
     const error = new Error('Invalid email or password.');
     error.statusCode = 401;
     throw error;
   }
 
-  user.lastLogin = new Date();
-  await user.save();
+  // Update last login
+  await db.collection('users').doc(doc.id).update({
+    lastLogin: new Date(),
+  });
+
+  const user = {
+    id: doc.id,
+    email: userData.email,
+    name: userData.name,
+  };
 
   const token = generateToken(user);
 
   return {
     token,
-    user: { id: user._id, email: user.email, name: user.name },
+    user,
   };
 };
 
 export const getUserProfile = async (userId) => {
-  const user = await User.findById(userId);
 
-  if (!user) {
+  const doc = await db.collection('users').doc(userId).get();
+
+  if (!doc.exists) {
     const error = new Error('User not found');
     error.statusCode = 404;
     throw error;
   }
 
+  const userData = doc.data();
+
   return {
-    id: user._id,
-    email: user.email,
-    name: user.name,
-    createdAt: user.createdAt,
-    lastLogin: user.lastLogin,
+    id: doc.id,
+    email: userData.email,
+    name: userData.name,
+    createdAt: userData.createdAt,
+    lastLogin: userData.lastLogin,
   };
 };

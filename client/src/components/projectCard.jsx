@@ -35,8 +35,8 @@ function ProjectCard({ project, onOpen, onDelete }) {
         <p className="project-card-date">Updated {formatDate(project.updatedAt)}</p>
       </div>
       <div className="project-card-actions">
-        <button className="project-card-open" onClick={() => onOpen(project._id)}>Open</button>
-        <button className="project-card-delete" onClick={() => onDelete(project._id)}>Delete</button>
+        <button className="project-card-open" onClick={() => onOpen(project.id)}>Open</button>
+        <button className="project-card-delete" onClick={() => onDelete(project.id)}>Delete</button>
       </div>
     </div>
   );
