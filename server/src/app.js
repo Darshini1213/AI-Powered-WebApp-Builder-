@@ -12,10 +12,13 @@ import {
 const app = express();
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:5175'
-  ],
+  origin: function (origin, callback) {
+    if (!origin || origin.startsWith('http://localhost:')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 

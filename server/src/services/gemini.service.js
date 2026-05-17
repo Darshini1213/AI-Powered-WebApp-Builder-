@@ -2,6 +2,10 @@ import { generateContent } from '../config/gemini.config.js';
 
 export const askGemini = async (prompt) => {
   try {
+    if (!prompt) {
+      throw new Error('Prompt is required');
+    }
+
     const response = await generateContent(prompt);
 
     if (!response) {
@@ -10,6 +14,7 @@ export const askGemini = async (prompt) => {
 
     return response;
   } catch (error) {
-    throw new Error('The AI service is currently unavailable. Please try again later.');
+    console.error('Gemini Service Error:', error);
+    throw error; // Pass the actual error up instead of generic message
   }
 };
