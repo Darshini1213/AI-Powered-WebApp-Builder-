@@ -1,4 +1,4 @@
-function ProjectCard({ project, onOpen, onDelete }) {
+function projectCard({ project, onOpen, onDelete }) {
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
     const now = new Date();
