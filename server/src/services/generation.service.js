@@ -1,5 +1,5 @@
 import { askGemini } from './gemini.service.js';
-import { getProjectById } from './project.service.js';
+import { getProjectById, updateProject } from './project.service.js';
 import { buildGenerationPrompt } from '../constants/prompts.js';
 import { parseGenerationResponse } from '../utils/code.utils.js';
 
@@ -56,7 +56,12 @@ export const generateCode = async (projectId, userId, userPrompt) => {
     project.updatedAt = new Date();
     
     console.log(`[Generation] Saving project...`);
-    await project.save();
+    await updateProject(projectId, userId, {
+      messages: project.messages,
+      versions: project.versions,
+      generatedCode: project.generatedCode,
+      title: project.title,
+    });
     console.log(`[Generation] Project saved successfully`);
 
     return {

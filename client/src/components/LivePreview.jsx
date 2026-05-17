@@ -12,7 +12,7 @@ function LivePreview({ code }) {
   return (
     <iframe
       srcDoc={code}
-      sandbox="allow-scripts"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
       title="Live Preview"
       className="preview-iframe"
     />
