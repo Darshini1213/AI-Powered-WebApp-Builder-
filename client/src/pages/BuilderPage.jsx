@@ -1,21 +1,22 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Download, MonitorPlay, Code2, Edit2, Check, Sparkles, Loader2 } from 'lucide-react';
 import { ToastContext } from '../context/ToastContext.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import ChatInput from '../components/ChatInput.jsx';
 import CodeEditor from '../components/CodeEditor.jsx';
 import LivePreview from '../components/LivePreview.jsx';
+import BackButton from '../components/BackButton.jsx';
 import { getProject, updateProject } from '../services/projectService.js';
 import { generateCode } from '../services/generationService.js';
 import '../styles/builder.css';
 
 const EXAMPLE_PROMPTS = [
   'A personal portfolio website with a dark theme',
-  'A simple calculator app',
-  'A weather dashboard with cards',
+  'A SaaS pricing page with 3 tiers',
+  'A modern weather dashboard',
   'A landing page for a coffee shop',
-  'A to-do list app',
-  'A countdown timer for New Year',
 ];
 
 function BuilderPage() {
@@ -31,6 +32,15 @@ function BuilderPage() {
   const [pageLoading, setPageLoading] = useState(true);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [editTitle, setEditTitle] = useState('');
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, loading]);
 
   useEffect(() => {
     const loadProject = async () => {
@@ -68,7 +78,7 @@ function BuilderPage() {
       }
 
       if (project.title === 'Untitled Project') {
-        const newTitle = prompt.length > 50 ? prompt.substring(0, 50) + '...' : prompt;
+        const newTitle = prompt.length > 30 ? prompt.substring(0, 30) + '...' : prompt;
         setProject((prev) => ({ ...prev, title: newTitle }));
         setEditTitle(newTitle);
       }
@@ -101,7 +111,7 @@ function BuilderPage() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${project && project.title ? project.title : 'my-app'}.html`;
+    link.download = `${project && project.title ? project.title.replace(/\\s+/g, '-').toLowerCase() : 'nxtbuild-app'}.html`;
     link.click();
     URL.revokeObjectURL(url);
     showToast('Code downloaded!', 'success');
@@ -110,42 +120,55 @@ function BuilderPage() {
   if (pageLoading) {
     return (
       <div className="loading-state" style={{ flex: 1 }}>
-        <div className="spinner" />
-        <p>Loading project...</p>
+        <Loader2 className="spinner" size={48} />
+        <p>Loading builder...</p>
       </div>
     );
   }
 
   return (
     <div className="builder">
-      <div className="builder-chat">
+      {/* Chat Panel */}
+      <motion.div 
+        className="builder-chat glass-panel"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="builder-chat-header">
+          <BackButton className="builder-back-btn" />
           {isEditingTitle ? (
-            <input
-              className="builder-title-input"
-              value={editTitle}
-              onChange={(e) => setEditTitle(e.target.value)}
-              onBlur={handleTitleSave}
-              onKeyDown={(e) => { if (e.key === 'Enter') handleTitleSave(); }}
-              autoFocus
-            />
+            <div className="builder-title-edit">
+              <input
+                className="builder-title-input"
+                value={editTitle}
+                onChange={(e) => setEditTitle(e.target.value)}
+                onBlur={handleTitleSave}
+                onKeyDown={(e) => { if (e.key === 'Enter') handleTitleSave(); }}
+                autoFocus
+              />
+              <button className="title-save-btn" onClick={handleTitleSave}>
+                <Check size={16} />
+              </button>
+            </div>
           ) : (
-            <h2
-              className="builder-chat-title"
-              onClick={() => setIsEditingTitle(true)}
-              title="Click to rename"
-            >
-              {project && project.title ? project.title : 'Untitled Project'}
-            </h2>
+            <div className="builder-title-display">
+              <h2 className="builder-chat-title">{project && project.title ? project.title : 'Untitled Project'}</h2>
+              <button className="title-edit-btn" onClick={() => setIsEditingTitle(true)} title="Rename">
+                <Edit2 size={14} />
+              </button>
+            </div>
           )}
         </div>
 
         <div className="builder-messages">
           {messages.length === 0 ? (
             <div className="builder-empty-chat">
-              <p className="builder-empty-icon">&#9830;</p>
+              <div className="builder-empty-icon-wrapper">
+                <Sparkles size={32} className="text-accent" />
+              </div>
               <p className="builder-empty-title">What would you like to build?</p>
-              <p className="builder-empty-subtitle">Describe your idea and AI will generate the code.</p>
+              <p className="builder-empty-subtitle">Describe your idea in detail for the best results.</p>
               <div className="builder-examples">
                 {EXAMPLE_PROMPTS.map((prompt, index) => (
                   <button
@@ -160,43 +183,66 @@ function BuilderPage() {
             </div>
           ) : (
             <div className="builder-messages-list">
-              {messages.map((msg, index) => (
-                <ChatMessage key={index} message={msg} />
-              ))}
-              {loading && (
-                <div className="builder-typing">
-                  <span className="builder-typing-dot">.</span>
-                  <span className="builder-typing-dot">.</span>
-                  <span className="builder-typing-dot">.</span>
-                  <span className="builder-typing-text">AI is generating your code</span>
-                </div>
-              )}
+              <AnimatePresence initial={false}>
+                {messages.map((msg, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChatMessage message={msg} />
+                  </motion.div>
+                ))}
+                {loading && (
+                  <motion.div 
+                    className="builder-typing"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <Loader2 size={16} className="spinner" />
+                    <span className="builder-typing-text text-gradient">AI is writing code...</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <div ref={messagesEndRef} />
             </div>
           )}
         </div>
 
         <ChatInput onSend={handleSend} loading={loading} disabled={false} />
-      </div>
+      </motion.div>
 
-      <div className="builder-preview">
+      {/* Preview Panel */}
+      <motion.div 
+        className="builder-preview glass-panel"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="builder-tabs">
           <div className="builder-tabs-left">
             <button
               className={`builder-tab ${activeTab === 'preview' ? 'active' : ''}`}
               onClick={() => setActiveTab('preview')}
             >
+              <MonitorPlay size={16} />
               Preview
             </button>
             <button
               className={`builder-tab ${activeTab === 'code' ? 'active' : ''}`}
               onClick={() => setActiveTab('code')}
             >
+              <Code2 size={16} />
               Code
             </button>
           </div>
           <div className="builder-tabs-right">
             {code && (
-              <button className="builder-action-btn" onClick={handleDownload}>Download</button>
+              <button className="builder-action-btn" onClick={handleDownload} title="Download Code">
+                <Download size={16} />
+                <span>Export</span>
+              </button>
             )}
           </div>
         </div>
@@ -208,7 +254,7 @@ function BuilderPage() {
             <CodeEditor code={code} onChange={setCode} readOnly={false} />
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

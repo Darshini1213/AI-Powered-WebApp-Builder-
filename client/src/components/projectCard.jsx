@@ -1,3 +1,6 @@
+import Tilt from 'react-parallax-tilt';
+import { ExternalLink, Trash2, Clock } from 'lucide-react';
+
 function ProjectCard({ project, onOpen, onDelete }) {
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -15,30 +18,63 @@ function ProjectCard({ project, onOpen, onDelete }) {
   };
 
   return (
-    <div className="project-card">
-      <div className="project-card-preview">
-        {project.generatedCode ? (
-          <iframe
-            srcDoc={project.generatedCode}
-            sandbox=""
-            title={project.title}
-            className="project-card-iframe"
-          />
-        ) : (
-          <div className="project-card-empty-preview">
-            <span>No preview yet</span>
+    <Tilt 
+      tiltMaxAngleX={8} 
+      tiltMaxAngleY={8} 
+      perspective={1000} 
+      scale={1.02} 
+      transitionSpeed={1500}
+      className="project-card-wrapper"
+    >
+      <div className="project-card glass-panel">
+        <div className="project-card-preview" onClick={() => onOpen(project.id)}>
+          {project.generatedCode ? (
+            <>
+              <iframe
+                srcDoc={project.generatedCode}
+                sandbox=""
+                title={project.title}
+                className="project-card-iframe"
+                tabIndex="-1"
+              />
+              <div className="project-card-overlay">
+                <ExternalLink size={32} className="overlay-icon" />
+              </div>
+            </>
+          ) : (
+            <div className="project-card-empty-preview">
+              <span className="text-gradient">No preview yet</span>
+            </div>
+          )}
+        </div>
+        <div className="project-card-content">
+          <div className="project-card-info">
+            <h3 className="project-card-title">{project.title}</h3>
+            <p className="project-card-date">
+              <Clock size={12} />
+              Updated {formatDate(project.updatedAt)}
+            </p>
           </div>
-        )}
+          <div className="project-card-actions">
+            <button className="project-card-btn primary" onClick={() => onOpen(project.id)}>
+              Open
+            </button>
+            <button 
+              className="project-card-btn danger" 
+              onClick={(e) => {
+                e.stopPropagation();
+                if(window.confirm('Are you sure you want to delete this project?')) {
+                  onDelete(project.id);
+                }
+              }}
+              title="Delete Project"
+            >
+              <Trash2 size={16} />
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="project-card-info">
-        <h3 className="project-card-title">{project.title}</h3>
-        <p className="project-card-date">Updated {formatDate(project.updatedAt)}</p>
-      </div>
-      <div className="project-card-actions">
-        <button className="project-card-open" onClick={() => onOpen(project.id)}>Open</button>
-        <button className="project-card-delete" onClick={() => onDelete(project.id)}>Delete</button>
-      </div>
-    </div>
+    </Tilt>
   );
 }
 
