@@ -338,3 +338,273 @@
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
 }
 
+[2026-06-01T17:24:48.219Z] [WARN] [ERROR_HANDLER] POST /register
+{
+  "method": "POST",
+  "path": "/register",
+  "status": 409,
+  "duration": "250ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:25:16.513Z] [WARN] [ERROR_HANDLER] POST /login
+{
+  "method": "POST",
+  "path": "/login",
+  "status": 401,
+  "duration": "175ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:13.040Z] [INFO] [ERROR_HANDLER] POST /register
+{
+  "method": "POST",
+  "path": "/register",
+  "status": 201,
+  "duration": "293ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:13.592Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "458ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:13.756Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "158ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:29.703Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "423ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:29.868Z] [WARN] [ERROR_HANDLER] GET /bimbUR1XuqoIkgIflcsK
+{
+  "method": "GET",
+  "path": "/bimbUR1XuqoIkgIflcsK",
+  "status": 400,
+  "duration": "121ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:29.991Z] [WARN] [ERROR_HANDLER] GET /bimbUR1XuqoIkgIflcsK
+{
+  "method": "GET",
+  "path": "/bimbUR1XuqoIkgIflcsK",
+  "status": 400,
+  "duration": "120ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:30.262Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "283ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:26:30.686Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "422ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:16.193Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 200,
+  "duration": "365ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:16.507Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "310ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:16.511Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "254ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:16.913Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "400ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:29.436Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "144ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:29.519Z] [WARN] [ERROR_HANDLER] GET /oHLPiVctGHDT5xn55F4v
+{
+  "method": "GET",
+  "path": "/oHLPiVctGHDT5xn55F4v",
+  "status": 400,
+  "duration": "45ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:29.567Z] [WARN] [ERROR_HANDLER] GET /oHLPiVctGHDT5xn55F4v
+{
+  "method": "GET",
+  "path": "/oHLPiVctGHDT5xn55F4v",
+  "status": 400,
+  "duration": "45ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:29.722Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "128ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:29.838Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "114ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:38.617Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "229ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:39.026Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "407ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:39.029Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "368ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:27:39.542Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "511ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-01T17:28:08.532Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "526ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-01T17:28:08.728Z] [WARN] [ERROR_HANDLER] GET /j3mhGxcNvilY2nZFY3Qy
+{
+  "method": "GET",
+  "path": "/j3mhGxcNvilY2nZFY3Qy",
+  "status": 400,
+  "duration": "137ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-01T17:28:08.778Z] [WARN] [ERROR_HANDLER] GET /j3mhGxcNvilY2nZFY3Qy
+{
+  "method": "GET",
+  "path": "/j3mhGxcNvilY2nZFY3Qy",
+  "status": 400,
+  "duration": "49ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-01T17:28:08.939Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "158ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+

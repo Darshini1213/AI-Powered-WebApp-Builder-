@@ -18,8 +18,27 @@ import { createLogger } from './utils/logger.js';
 const logger = createLogger('APP');
 const app = express();
 
-// Security Middleware
-app.use(helmet());
+// CORS Configuration (must be before helmet and security middleware)
+app.use(cors({
+  origin: function (origin, callback) {
+    const allowedOrigin = config.cors.origin;
+    // Allow localhost with any port, or the configured origin
+    if (!origin || origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:') || (allowedOrigin && origin === allowedOrigin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200,
+}));
+
+// Security Middleware (after CORS)
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+}));
 app.use(compression());
 
 // Rate Limiting
@@ -31,21 +50,6 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 app.use('/api/', limiter);
-
-// CORS Configuration
-app.use(cors({
-  origin: function (origin, callback) {
-    const allowedOrigin = config.cors.origin;
-    if (!origin || origin.startsWith('http://localhost:') || (allowedOrigin && origin === allowedOrigin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
 
 // Body Parser Middleware
 app.use(express.json({ limit: config.api.maxRequestSize }));
