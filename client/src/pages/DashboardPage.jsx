@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, LayoutTemplate, Loader2 } from 'lucide-react';
+import { Plus, LayoutTemplate } from 'lucide-react';
 import { ToastContext } from '../context/ToastContext.jsx';
 import BackButton from '../components/BackButton.jsx';
 import ProjectCard from '../components/projectCard.jsx';
+import { DashboardSkeleton } from '../components/SkeletonLoader.jsx';
 import { getProjects, createProject, deleteProject } from '../services/projectService.js';
 import '../styles/dashboard.css';
 
@@ -54,9 +55,8 @@ function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="loading-state" style={{ flex: 1 }}>
-        <Loader2 className="spinner" size={48} />
-        <p>Loading your workspace...</p>
+      <div className="dashboard">
+        <DashboardSkeleton />
       </div>
     );
   }

@@ -1,13 +1,14 @@
 import { useState, useEffect, useContext, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Download, MonitorPlay, Code2, Edit2, Check, Sparkles, Loader2 } from 'lucide-react';
+import { Download, MonitorPlay, Code2, Edit2, Check, Sparkles } from 'lucide-react';
 import { ToastContext } from '../context/ToastContext.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import ChatInput from '../components/ChatInput.jsx';
 import CodeEditor from '../components/CodeEditor.jsx';
 import LivePreview from '../components/LivePreview.jsx';
 import BackButton from '../components/BackButton.jsx';
+import { BuilderSkeleton } from '../components/SkeletonLoader.jsx';
 import { getProject, updateProject } from '../services/projectService.js';
 import { generateCode } from '../services/generationService.js';
 import '../styles/builder.css';
@@ -119,9 +120,8 @@ function BuilderPage() {
 
   if (pageLoading) {
     return (
-      <div className="loading-state" style={{ flex: 1 }}>
-        <Loader2 className="spinner" size={48} />
-        <p>Loading builder...</p>
+      <div className="builder">
+        <BuilderSkeleton />
       </div>
     );
   }

@@ -1,0 +1,136 @@
+/* Error Boundary Styles */
+.error-boundary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #160f0c 0%, #1f1511 100%);
+  padding: 20px;
+}
+
+.error-boundary-content {
+  background: rgba(45, 30, 22, 0.8);
+  border: 1px solid rgba(203, 125, 62, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.error-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  color: #cb7d3e;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.error-message {
+  color: #dbb169;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.error-details {
+  background: rgba(22, 15, 12, 0.6);
+  border: 1px solid rgba(203, 125, 62, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.error-details summary {
+  color: #dbb169;
+  font-weight: 600;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.error-stack {
+  color: #9a9a5d;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  overflow-x: auto;
+  padding: 10px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.error-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0 0 0;
+}
+
+.error-button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #cb7d3e 0%, #dbb169 100%);
+  color: #160f0c;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(203, 125, 62, 0.4);
+}
+
+.home-button {
+  background: transparent;
+  color: #dbb169;
+  border: 2px solid #dbb169;
+}
+
+.home-button:hover {
+  background: rgba(219, 177, 105, 0.1);
+  border-color: #cb7d3e;
+  color: #cb7d3e;
+}
+
+.error-warning {
+  color: #cb7d3e;
+  font-size: 14px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(203, 125, 62, 0.2);
+}
+
+@media (max-width: 640px) {
+  .error-boundary-content {
+    padding: 25px;
+  }
+
+  .error-title {
+    font-size: 22px;
+  }
+
+  .error-message {
+    font-size: 14px;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .error-button {
+    width: 100%;
+  }
+}

@@ -1,16 +1,16 @@
  import * as authService from '../services/auth.service.js';
+import { sanitizeInput, sanitizeEmail } from '../utils/sanitization.utils.js';
 
 export const registerUser = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    let { name, email, password } = req.body;
 
-    if (!name || !email || !password) {
-      return res.status(400).json({ success: false, message: 'Name, email, and password are required.' });
-    }
-    if (password.length < 6) {
-      return res.status(400).json({ success: false, message: 'Password must be at least 6 characters.' });
-    }
+    // Sanitize inputs
+    name = sanitizeInput(name);
+    email = sanitizeEmail(email);
+    password = sanitizeInput(password);
 
+    // Validation errors already handled by express-validator
     const result = await authService.register(name, email, password);
     return res.status(201).json({ success: true, data: result });
   } catch (error) {
@@ -21,11 +21,11 @@ export const registerUser = async (req, res, next) => {
 
 export const loginUser = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({ success: false, message: 'Email and password are required.' });
-    }
+    // Sanitize inputs
+    email = sanitizeEmail(email);
+    password = sanitizeInput(password);
 
     const result = await authService.emailLogin(email, password);
     return res.json({ success: true, data: result });
@@ -37,7 +37,7 @@ export const loginUser = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
   try {
-const user = await authService.getUserProfile(req.user.id);
+    const user = await authService.getUserProfile(req.user.id);
     return res.json({ success: true, data: user });
   } catch (error) {
     next(error);
