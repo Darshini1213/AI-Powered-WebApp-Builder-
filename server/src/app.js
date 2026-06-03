@@ -66,6 +66,9 @@ app.get('/', (req, res) => {
   });
 });
 
+// Ignore favicon.ico requests
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // API Routes
 app.use('/api', routes);
 

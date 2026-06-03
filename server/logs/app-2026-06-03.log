@@ -1,0 +1,670 @@
+[2026-06-03T04:44:39.272Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 200,
+  "duration": "1558ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:39.553Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "278ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:39.610Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "263ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:39.815Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "203ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:43.812Z] [INFO] [ERROR_HANDLER] GET /zDmR0A2XKMXFj499jFim
+{
+  "method": "GET",
+  "path": "/zDmR0A2XKMXFj499jFim",
+  "status": 200,
+  "duration": "148ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:43.956Z] [INFO] [ERROR_HANDLER] GET /zDmR0A2XKMXFj499jFim
+{
+  "method": "GET",
+  "path": "/zDmR0A2XKMXFj499jFim",
+  "status": 304,
+  "duration": "143ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:44:54.560Z] [INFO] [ERROR_HANDLER] POST /logout
+{
+  "method": "POST",
+  "path": "/logout",
+  "status": 200,
+  "duration": "129ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:45:20.695Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.122.1 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-03T04:46:09.850Z] [INFO] [ERROR_HANDLER] POST /login
+{
+  "method": "POST",
+  "path": "/login",
+  "status": 200,
+  "duration": "610ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:46:10.258Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "275ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:46:10.472Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "212ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:46:27.138Z] [INFO] [ERROR_HANDLER] DELETE /j3mhGxcNvilY2nZFY3Qy
+{
+  "method": "DELETE",
+  "path": "/j3mhGxcNvilY2nZFY3Qy",
+  "status": 200,
+  "duration": "1163ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:46:31.743Z] [INFO] [ERROR_HANDLER] DELETE /Y6ksQ8poX3v1IBOkTCUh
+{
+  "method": "DELETE",
+  "path": "/Y6ksQ8poX3v1IBOkTCUh",
+  "status": 200,
+  "duration": "440ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:46:45.056Z] [INFO] [ERROR_HANDLER] DELETE /JaoU2XM7KCuDXks8nPyY
+{
+  "method": "DELETE",
+  "path": "/JaoU2XM7KCuDXks8nPyY",
+  "status": 200,
+  "duration": "374ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:47:39.371Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "389ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:47:39.631Z] [INFO] [ERROR_HANDLER] GET /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "GET",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 200,
+  "duration": "214ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:47:39.948Z] [INFO] [ERROR_HANDLER] GET /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "GET",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 304,
+  "duration": "315ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:47:44.863Z] [WARN] [ERROR_HANDLER] POST /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "POST",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 400,
+  "duration": "82ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:06.879Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 200,
+  "duration": "343ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:07.080Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "199ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:07.289Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "375ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:07.595Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "302ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:15.074Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "376ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:15.483Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "407ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:48:20.339Z] [INFO] [ERROR_HANDLER] POST /logout
+{
+  "method": "POST",
+  "path": "/logout",
+  "status": 200,
+  "duration": "44ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:49:45.236Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.122.1 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36"
+}
+
+[2026-06-03T04:50:32.850Z] [INFO] [ERROR_HANDLER] POST /login
+{
+  "method": "POST",
+  "path": "/login",
+  "status": 200,
+  "duration": "332ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:33.091Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "153ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:33.242Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "148ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:37.090Z] [INFO] [ERROR_HANDLER] GET /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "GET",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 304,
+  "duration": "140ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:37.211Z] [INFO] [ERROR_HANDLER] GET /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "GET",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 304,
+  "duration": "119ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:45.450Z] [WARN] [ERROR_HANDLER] POST /MKlSPVdXdCEWy4q81CyK
+{
+  "method": "POST",
+  "path": "/MKlSPVdXdCEWy4q81CyK",
+  "status": 400,
+  "duration": "116ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:49.063Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 200,
+  "duration": "151ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:49.182Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "117ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:49.273Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "149ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:50:49.402Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "123ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:01.489Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "115ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:01.615Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "124ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:01.640Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "116ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:01.773Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "131ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:06.848Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "118ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:06.954Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "104ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T04:51:15.546Z] [INFO] [ERROR_HANDLER] POST /logout
+{
+  "method": "POST",
+  "path": "/logout",
+  "status": 200,
+  "duration": "54ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:13:57.209Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "27ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:13:57.464Z] [WARN] [ERROR_HANDLER] GET /favicon.ico
+{
+  "method": "GET",
+  "path": "/favicon.ico",
+  "status": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:16:26.252Z] [INFO] [ERROR_HANDLER] POST /login
+{
+  "method": "POST",
+  "path": "/login",
+  "status": 200,
+  "duration": "1700ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:16:26.535Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "217ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:16:26.787Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "250ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:41.127Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 200,
+  "duration": "179ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:41.287Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "158ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:41.312Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "128ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:41.446Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "130ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:48.311Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "150ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:48.523Z] [INFO] [ERROR_HANDLER] GET /me
+{
+  "method": "GET",
+  "path": "/me",
+  "status": 304,
+  "duration": "209ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:48.555Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "200ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:48.683Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "125ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:51.186Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "154ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:51.332Z] [INFO] [ERROR_HANDLER] GET /HUV8APGQE1vB0ouMCH7N
+{
+  "method": "GET",
+  "path": "/HUV8APGQE1vB0ouMCH7N",
+  "status": 200,
+  "duration": "95ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:51.449Z] [INFO] [ERROR_HANDLER] GET /HUV8APGQE1vB0ouMCH7N
+{
+  "method": "GET",
+  "path": "/HUV8APGQE1vB0ouMCH7N",
+  "status": 304,
+  "duration": "114ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:18:59.835Z] [INFO] [ERROR_HANDLER] POST /logout
+{
+  "method": "POST",
+  "path": "/logout",
+  "status": 200,
+  "duration": "89ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:19:22.102Z] [INFO] [ERROR_HANDLER] POST /login
+{
+  "method": "POST",
+  "path": "/login",
+  "status": 200,
+  "duration": "328ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:19:22.321Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 200,
+  "duration": "135ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:19:22.453Z] [INFO] [ERROR_HANDLER] GET /
+{
+  "method": "GET",
+  "path": "/",
+  "status": 304,
+  "duration": "128ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:20:37.084Z] [INFO] [ERROR_HANDLER] POST /
+{
+  "method": "POST",
+  "path": "/",
+  "status": 201,
+  "duration": "324ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:20:37.401Z] [INFO] [ERROR_HANDLER] GET /x2nmOo37Mewjhniq3LeO
+{
+  "method": "GET",
+  "path": "/x2nmOo37Mewjhniq3LeO",
+  "status": 200,
+  "duration": "284ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:20:37.556Z] [INFO] [ERROR_HANDLER] GET /x2nmOo37Mewjhniq3LeO
+{
+  "method": "GET",
+  "path": "/x2nmOo37Mewjhniq3LeO",
+  "status": 304,
+  "duration": "151ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
+[2026-06-03T05:20:39.609Z] [WARN] [ERROR_HANDLER] POST /x2nmOo37Mewjhniq3LeO
+{
+  "method": "POST",
+  "path": "/x2nmOo37Mewjhniq3LeO",
+  "status": 400,
+  "duration": "71ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+}
+
