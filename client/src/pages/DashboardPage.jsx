@@ -6,6 +6,7 @@ import { ToastContext } from '../context/ToastContext.jsx';
 import BackButton from '../components/BackButton.jsx';
 import ProjectCard from '../components/projectCard.jsx';
 import { DashboardSkeleton } from '../components/SkeletonLoader.jsx';
+import api from '../services/api.js';
 import { getProjects, createProject, deleteProject } from '../services/projectService.js';
 import '../styles/dashboard.css';
 
@@ -22,7 +23,7 @@ function DashboardPage() {
         const data = await getProjects();
         setProjects(data);
       } catch (err) {
-        showToast('Failed to load projects.', 'error');
+        showToast(api.getErrorMessage(err) || 'Failed to load projects.', 'error');
       } finally {
         setLoading(false);
       }
@@ -35,7 +36,7 @@ function DashboardPage() {
       const project = await createProject();
       navigate(`/builder/${project.id}`);
     } catch (err) {
-      showToast('Failed to create project.', 'error');
+      showToast(api.getErrorMessage(err) || 'Failed to create project.', 'error');
     }
   };
 

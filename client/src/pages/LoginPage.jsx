@@ -34,9 +34,15 @@ function LoginPage() {
       showToast('Please enter your name.', 'error');
       return;
     }
-    if (password.length < 6) {
-      showToast('Password must be at least 6 characters.', 'error');
-      return;
+    if (isSignUp) {
+      if (password.length < 8) {
+        showToast('Password must be at least 8 characters.', 'error');
+        return;
+      }
+      if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
+        showToast('Password must include uppercase, lowercase, and a number.', 'error');
+        return;
+      }
     }
 
     setLoading(true);
@@ -52,9 +58,10 @@ function LoginPage() {
       );
       navigate('/dashboard');
     } catch (err) {
-      const message = err.response && err.response.data && err.response.data.message
-        ? err.response.data.message
-        : 'Something went wrong.';
+      const data = err.response?.data;
+      const message = data?.errors?.[0]?.message
+        || data?.message
+        || 'Something went wrong.';
       showToast(message, 'error');
     } finally {
       setLoading(false);
@@ -164,7 +171,7 @@ function LoginPage() {
                   <input
                     type="password"
                     className="login-input"
-                    placeholder="Min. 6 characters"
+                    placeholder={isSignUp ? 'Min. 8 chars, upper, lower, number' : 'Your password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />

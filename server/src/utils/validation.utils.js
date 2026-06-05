@@ -53,8 +53,8 @@ export const validateLogin = [
 // Project Validation Rules
 export const validateProjectCreate = [
   body('title')
+    .optional({ values: 'null' })
     .trim()
-    .optional()
     .isLength({ max: 200 })
     .withMessage('Title must not exceed 200 characters'),
 ];
@@ -83,7 +83,7 @@ export const validateProjectUpdate = [
 
 // Generation Validation Rules
 export const validateGeneration = [
-  body('projectId')
+  param('projectId')
     .trim()
     .notEmpty()
     .withMessage('Project ID is required'),

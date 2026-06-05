@@ -5,10 +5,9 @@ export const registerUser = async (req, res, next) => {
   try {
     let { name, email, password } = req.body;
 
-    // Sanitize inputs
+    // Sanitize inputs (password is hashed — do not run through XSS sanitizer)
     name = sanitizeInput(name);
     email = sanitizeEmail(email);
-    password = sanitizeInput(password);
 
     // Validation errors already handled by express-validator
     const result = await authService.register(name, email, password);
@@ -23,9 +22,7 @@ export const loginUser = async (req, res, next) => {
   try {
     let { email, password } = req.body;
 
-    // Sanitize inputs
     email = sanitizeEmail(email);
-    password = sanitizeInput(password);
 
     const result = await authService.emailLogin(email, password);
     return res.json({ success: true, data: result });

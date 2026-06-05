@@ -11,7 +11,8 @@ const getProject = async (id) => {
 };
 
 const createProject = async (title) => {
-  const response = await api.post('/projects', { title });
+  const payload = title ? { title } : {};
+  const response = await api.post('/projects', payload);
   return response.data.data;
 };
 

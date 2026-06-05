@@ -30,9 +30,10 @@ const authenticate = async (req, res, next) => {
       });
     }
 
+    const { password: _password, ...userData } = userDoc.data();
     req.user = {
       id: userDoc.id,
-      ...userDoc.data(),
+      ...userData,
     };
 
     next();

@@ -1,8 +1,15 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import config from "./config.js";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const apiKey = config.gemini.apiKey;
 
-const MODEL_NAME = "gemini-2.5-flash";
+if (!apiKey) {
+  console.warn("[GEMINI WARNING] GEMINI_API_KEY is not set — AI generation will fail");
+}
+
+const genAI = new GoogleGenerativeAI(apiKey || "");
+
+const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
 const generateContent = async (prompt) => {
   try {
